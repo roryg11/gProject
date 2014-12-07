@@ -28,6 +28,8 @@ gem 'spring',        group: :development
 
 gem 'rails_12factor', group: :production
 
+gem 'bootstrap-sass', '~> 3.3.1'
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
