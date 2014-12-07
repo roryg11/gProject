@@ -1,1 +1,28 @@
-index page
+<div class="page-header">
+  <%= link_to "New Trip", new_trip_path, class: "btn btn-info pull-right" %>
+  <h1>Your Trips</h1>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th> Trip Name </th>
+      <th> Date </th>
+      <th> Location </th>
+      <th> Duration </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @trips.each do |trip| %>
+      <tr>
+        <td><%= trip.name %></td>
+        <td><%= trip.date %></td>
+        <td><%= trip.location %></td>
+        <td><%= trip.duration %></td>
+        <td>Show Button</td>
+        <td>Edit Button</td>
+        <td>Delete Button</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
