@@ -11,6 +11,7 @@ class TripsController < ApplicationController
     @trip=Trip.new(trip_params)
     if @trip.save
       redirect_to trips_path
+      flash[:notice] = "Trip successfully created"
     else
       render :new
     end

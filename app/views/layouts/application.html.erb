@@ -40,6 +40,14 @@
     </div><!-- /.container-fluid -->
   </nav>
 
+
+    <% if notice %>
+      <div class="alert alert-success">
+        <p class="text-center"><%= notice %><p>
+      </div>
+    <% end %>
+
+
   <div class="container">
     <%= yield %>
   </div>
