@@ -10,16 +10,17 @@
       <th> Date </th>
       <th> Location </th>
       <th> Duration </th>
+      <th colspan= "3"></th>
     </tr>
   </thead>
   <tbody>
     <% @trips.each do |trip| %>
       <tr>
         <td><%= trip.name %></td>
-        <td><%= trip.date %></td>
+        <td><%= trip.date_of_trip %></td>
         <td><%= trip.location %></td>
-        <td><%= trip.duration %></td>
-        <td>Show Button</td>
+        <td>Still figuring out duration</td>
+        <td><%= link_to "Show", trip_path(trip), class: "btn btn-default"%></td>
         <td>Edit Button</td>
         <td>Delete Button</td>
       </tr>
