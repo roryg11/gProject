@@ -1,0 +1,59 @@
+<div class="page-header">
+  <h1>Editing <%=@trip.name.capitalize %> Trip </h1>
+</div>
+
+<%= form_for(@trip, html: {class:"form-horizontal" }) do |f| %>
+<% if @trip.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@trip.errors.count, "error") %> prohibited this trip from being saved: </h2>
+  <ul>
+    <% @trip.errors.full_messages.each do |message| %>
+    <li><%= message %> </li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class ="form-group" %>
+  <%= f.label :name, class: "col-md-2 control-label"%>
+  <div class= "col-md-4">
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+</div>
+
+<div class ="form-group" %>
+  <%= f.label :date_of_trip, class: "col-md-2 control-label"%>
+  <div class= "col-md-4">
+    <%= f.date_field :date_of_trip, class: "form-control" %>
+  </div>
+</div>
+
+<div class ="form-group" %>
+  <%= f.label :location, class: "col-md-2 control-label"%>
+  <div class= "col-md-4">
+    <%= f.text_area :location, class: "form-control" %>
+  </div>
+</div>
+
+<div class ="form-group" %>
+  <%= f.label :activities, class: "col-md-2 control-label"%>
+  <div class= "col-md-6">
+    <%= f.select :activities, ["hiking/climbing", "safari", "religious sight seeing", "beach bumming"], class: "form-control" %>
+  </div>
+</div>
+
+<div class ="form-group" %>
+  <%= f.label :trip_type, class: "col-md-2 control-label"%>
+  <div class= "col-md-6">
+    <%= f.select :trip_type, ["backpacking", "luxury", "outdoor adventure", "beach", "historical tour"], class: "form-control" %>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-md-offset-2 col-md-6">
+    <%= f.submit class: "btn btn-primary" %>
+    <%= link_to "Cancel", :back, class: "btn btn-default" %>
+  </div>
+</div>
+
+<% end %>

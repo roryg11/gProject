@@ -21,8 +21,8 @@
         <td><%= trip.location %></td>
         <td>Still figuring out duration</td>
         <td><%= link_to "Show", trip_path(trip), class: "btn btn-default"%></td>
-        <td>Edit Button</td>
-        <td>Delete Button</td>
+        <td><%= link_to "Edit", trip, class: "btn btn-default" %></td>
+        <td><%= link_to "Delete", trip, method: :delete, class: "btn btn-default" %></td>
       </tr>
     <% end %>
   </tbody>
